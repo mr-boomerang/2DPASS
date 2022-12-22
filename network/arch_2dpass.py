@@ -1,3 +1,4 @@
+import pdb
 import torch
 import torch_scatter
 import numpy as np
@@ -162,6 +163,7 @@ class get_model(LightningBaseModel):
 
     def forward(self, data_dict):
         # 3D network
+        # pdb.set_trace()
         data_dict = self.model_3d(data_dict)
 
         # training with 2D network

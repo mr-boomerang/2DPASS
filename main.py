@@ -181,7 +181,7 @@ if __name__ == '__main__':
             my_model = my_model.load_from_checkpoint(configs.checkpoint, config=configs, strict=(not configs.pretrain2d))
         else:
             # continue last training
-            my_model = my_model.load_from_checkpoint(configs.checkpoint)
+            my_model = my_model.load_from_checkpoint(configs.checkpoint, config=configs)
 
     if configs.SWA:
         swa = [StochasticWeightAveraging(swa_epoch_start=configs.train_params.swa_epoch_start, annealing_epochs=1)]
